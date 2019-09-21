@@ -3,8 +3,8 @@ const jwt = require('jsonwebtoken');
 const secret = process.env.JWT_SECRET;
 
 const authModel = {
-    login: function (res, body) {
-        const payload = { email: body.email };
+    login: function (req, res) {
+        const payload = { email: req.body.email };
         const token = jwt.sign(payload, secret, { expiresIn: '1h'});
 
         return res.json({
