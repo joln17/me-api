@@ -7,10 +7,11 @@ const app = express();
 const port = 8333;
 
 const index = require('./routes/index');
-const hello = require('./routes/hello');
-const user = require('./routes/user');
+const auth = require('./routes/auth');
 
 app.use(cors());
+
+app.disable('x-powered-by');
 
 // don't show the log when it is test
 if (process.env.NODE_ENV !== 'test') {
@@ -23,8 +24,7 @@ app.use(bodyParser.urlencoded({ extended: true })); // for parsing application/x
 
 // Add routes
 app.use('/', index);
-app.use('/hello', hello);
-app.use('/user', user);
+app.use('/auth', auth);
 
 
 // Add routes for 404 and error handling
