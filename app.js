@@ -8,6 +8,9 @@ const port = 8333;
 
 const index = require('./routes/index');
 const auth = require('./routes/auth');
+const reports = require('./routes/reports');
+
+require('dotenv').config();
 
 app.use(cors());
 
@@ -25,6 +28,7 @@ app.use(bodyParser.urlencoded({ extended: true })); // for parsing application/x
 // Add routes
 app.use('/', index);
 app.use('/auth', auth);
+app.use('/reports', reports);
 
 
 // Add routes for 404 and error handling
