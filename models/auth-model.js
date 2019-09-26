@@ -139,7 +139,7 @@ const authModel = {
         });
     },
 
-    verifyAdmin: function (req, res) {
+    verifyAdminAccessCode: function (req, res) {
         const adminPass = req.body.adminPass;
         const email = req.user.email;
         const adminEmail = "admin@admin";

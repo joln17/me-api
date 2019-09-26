@@ -33,9 +33,9 @@ router.get('/verify-admin-login',
         });
     }
 );
-router.post('/verify-admin',
+router.put('/verify-admin-access-code',
     (req, res, next) => auth.checkToken(req, res, next),
-    (req, res) => auth.verifyAdmin(req, res)
+    (req, res) => auth.verifyAdminAccessCode(req, res)
 );
 
 module.exports = router;
