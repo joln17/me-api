@@ -1,10 +1,9 @@
 const bcrypt = require('bcryptjs');
 const jwt = require('jsonwebtoken');
-const sqlite3 = require('sqlite3').verbose();
 
 const saltRounds = 10;
 const secret = process.env.JWT_SECRET;
-const db = new sqlite3.Database('./db/db.sqlite');
+const db = require('../db/database');
 
 const authModel = {
     register: function (req, res) {
