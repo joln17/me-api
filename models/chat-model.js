@@ -1,5 +1,5 @@
 const mongo = require('mongodb').MongoClient;
-const dsn = 'mongodb://localhost:27017/chat';
+const dsn = process.env.CHAT_DSN || 'mongodb://localhost:27017/chat';
 
 const chatModel = {
     loadMessages: function (req, res) {
