@@ -9,6 +9,7 @@ const port = 8333;
 const index = require('./routes/index');
 const auth = require('./routes/auth');
 const reports = require('./routes/reports');
+const chat = require('./routes/chat');
 
 require('dotenv').config();
 
@@ -29,6 +30,7 @@ app.use(bodyParser.urlencoded({ extended: true })); // for parsing application/x
 app.use('/', index);
 app.use('/auth', auth);
 app.use('/reports', reports);
+app.use('/chat', chat);
 
 
 // Add routes for 404 and error handling
